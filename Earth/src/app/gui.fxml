@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.canvas.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.chart.*?>
+
+<SplitPane dividerPositions="0.4" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.FXMLController">
+  <items>
+      <SubScene fx:id="subScene" depthBuffer="true" fill="#d7cfcf" height="800.0" width="950.0">
+        <root>
+          <Region />
+        </root>
+      </SubScene>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <TabPane layoutY="-3.0" prefHeight="800.0" prefWidth="272.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <tabs>
+                <Tab text="Настройки сцены">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="691.0" prefWidth="272.0">
+                           <children>
+                              <Slider fx:id="oncoming" layoutX="110.0" layoutY="43.0" majorTickUnit="50.0" max="600.0" min="-600.0" minorTickCount="1" orientation="VERTICAL" prefHeight="265.0" prefWidth="103.0" showTickLabels="true" showTickMarks="true" AnchorPane.leftAnchor="110.0" AnchorPane.rightAnchor="109.0" AnchorPane.topAnchor="43.0" />
+                              <Label layoutX="79.0" layoutY="14.0" prefHeight="17.0" prefWidth="165.0" text="Приблизить/отдалить Землю" AnchorPane.leftAnchor="79.0" AnchorPane.rightAnchor="78.0" AnchorPane.topAnchor="14.0" />
+                              <CheckBox fx:id="shadows" layoutX="84.0" layoutY="329.0" mnemonicParsing="false" onAction="#shadows" text="Убрать тени" AnchorPane.leftAnchor="84.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="329.0" />
+                              <CheckBox fx:id="background" layoutX="84.0" layoutY="387.0" mnemonicParsing="false" onAction="#background" text="Убрать фон" AnchorPane.leftAnchor="84.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="387.0" />
+                              <Button fx:id="reset" layoutX="85.0" layoutY="702.0" mnemonicParsing="false" onAction="#reset" prefHeight="25.0" prefWidth="106.0" text="Сбросить все" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="81.0" AnchorPane.topAnchor="702.0" />
+                              <CheckBox fx:id="sun" layoutX="85.0" layoutY="357.0" mnemonicParsing="false" onAction="#sun" text="Эффект света от Солнца" />
+                              <Slider fx:id="speed_modeling" layoutX="19.0" layoutY="462.0" majorTickUnit="1.0" max="10.0" min="1.0" minorTickCount="0" prefHeight="29.0" prefWidth="289.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="462.0" />
+                              <Label layoutX="91.0" layoutY="435.0" text="Скорость моделирования:" />
+                              <Separator layoutY="419.0" prefHeight="5.0" prefWidth="330.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="419.0" />
+                              <Button fx:id="test1" layoutX="138.0" layoutY="512.0" mnemonicParsing="false" onAction="#test" prefHeight="25.0" prefWidth="50.0" text="Тест" AnchorPane.leftAnchor="138.0" AnchorPane.rightAnchor="133.0" AnchorPane.topAnchor="512.0" />
+                              <Button fx:id="stop" layoutX="138.0" layoutY="553.0" mnemonicParsing="false" onAction="#stop" prefHeight="25.0" prefWidth="50.0" text="Стоп" AnchorPane.leftAnchor="138.0" AnchorPane.rightAnchor="134.0" AnchorPane.topAnchor="553.0" />
+                              <Separator layoutY="675.0" prefHeight="0.0" prefWidth="333.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="675.0" />
+                              <Button fx:id="reset_modeling" layoutX="61.0" layoutY="594.0" mnemonicParsing="false" onAction="#reset_modeling" prefHeight="25.0" prefWidth="201.0" text="Сброс настроек моделирования" AnchorPane.leftAnchor="61.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="594.0" />
+                              <Button fx:id="calculate1" disable="true" layoutX="61.0" layoutY="633.0" mnemonicParsing="false" onAction="#calculate" text="Рассчитать" AnchorPane.leftAnchor="61.0" AnchorPane.rightAnchor="185.0" AnchorPane.topAnchor="633.0" />
+                              <CheckBox fx:id="observ" layoutX="153.0" layoutY="637.0" mnemonicParsing="false" onAction="#observ_on" text="Несколько обсерваций" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Настройки судна">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="f_of_start" layoutX="75.0" layoutY="207.0" prefHeight="25.0" prefWidth="60.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="187.0" AnchorPane.topAnchor="207.0" />
+                              <TextField fx:id="l_of_start" layoutX="75.0" layoutY="246.0" prefHeight="25.0" prefWidth="60.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="187.0" AnchorPane.topAnchor="246.0" />
+                              <Label fx:id="label_start" layoutX="72.0" layoutY="181.0" prefHeight="17.0" prefWidth="212.0" text="Координаты судна" AnchorPane.leftAnchor="72.0" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="181.0" />
+                              <Label layoutX="14.0" layoutY="211.0" prefHeight="17.0" prefWidth="50.0" text="Широта:" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="211.0" />
+                              <Label layoutX="14.0" layoutY="250.0" prefHeight="17.0" prefWidth="50.0" text="Долгота:" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="250.0" />
+                              <Button fx:id="add_vessel" layoutX="102.0" layoutY="72.0" mnemonicParsing="false" onAction="#add_vessel" text="Добавить судно" AnchorPane.leftAnchor="102.0" AnchorPane.rightAnchor="101.0" AnchorPane.topAnchor="72.0" />
+                              <Button fx:id="reset_vessel" layoutX="94.0" layoutY="114.0" mnemonicParsing="false" onAction="#reset_vessel" text="Сброс настроек судна" AnchorPane.leftAnchor="94.0" AnchorPane.rightAnchor="90.0" AnchorPane.topAnchor="114.0" />
+                              <CheckBox fx:id="motion_checkbox" layoutX="107.0" layoutY="32.0" mnemonicParsing="false" onAction="#motion_checkbox" text="Судно движется" />
+                              <Separator layoutY="163.0" prefHeight="7.0" prefWidth="329.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="163.0" />
+                              <Label fx:id="label_st_f" layoutX="144.0" layoutY="211.0" prefHeight="17.0" prefWidth="155.0" textFill="RED" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="211.0" />
+                              <Label fx:id="label_st_l" layoutX="144.0" layoutY="250.0" prefHeight="17.0" prefWidth="155.0" textFill="RED" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="250.0" />
+                              <AnchorPane fx:id="motion" layoutY="279.0" prefHeight="258.0" prefWidth="322.0" visible="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="279.0">
+                                 <children>
+                                    <Separator layoutY="245.0" prefHeight="5.0" prefWidth="336.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="245.0" />
+                                    <Slider fx:id="speed" layoutX="26.0" layoutY="182.0" majorTickUnit="2.0" max="28.0" min="10.0" minorTickCount="1" prefHeight="38.0" prefWidth="218.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="19.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="182.0" />
+                                    <Label layoutX="94.0" layoutY="151.0" prefHeight="17.0" prefWidth="133.0" text="Скорость судна в узлах:" AnchorPane.leftAnchor="94.0" AnchorPane.rightAnchor="95.0" AnchorPane.topAnchor="151.0" />
+                                    <Separator layoutY="140.0" prefHeight="5.0" prefWidth="280.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="140.0" />
+                                    <TextField fx:id="l_of_end" layoutX="72.0" layoutY="104.0" prefHeight="25.0" prefWidth="60.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="187.0" AnchorPane.topAnchor="104.0" />
+                                    <Label layoutX="14.0" layoutY="108.0" prefHeight="17.0" prefWidth="50.0" text="Долгота:" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="108.0" />
+                                    <Separator layoutX="1.0" layoutY="13.0" prefHeight="3.0" prefWidth="283.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="13.0" />
+                                    <Label layoutX="72.0" layoutY="31.0" prefHeight="17.0" prefWidth="205.0" text="Координаты конца движения судна" AnchorPane.leftAnchor="72.0" AnchorPane.rightAnchor="52.0" AnchorPane.topAnchor="31.0" />
+                                    <TextField fx:id="f_of_end" layoutX="72.0" layoutY="65.0" prefHeight="25.0" prefWidth="60.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="187.0" AnchorPane.topAnchor="65.0" />
+                                    <Label layoutX="14.0" layoutY="69.0" prefHeight="17.0" prefWidth="50.0" text="Широта:" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="69.0" />
+                                    <Label fx:id="label_end_f" layoutX="143.0" layoutY="69.0" prefHeight="17.0" prefWidth="150.0" textFill="RED" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="69.0" />
+                                    <Label fx:id="label_end_l" layoutX="147.0" layoutY="108.0" prefHeight="17.0" prefWidth="150.0" textFill="RED" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="108.0" />
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="21.0" layoutX="48.0" layoutY="29.0" stroke="BLACK" strokeType="INSIDE" width="21.0" />
+                                 </children>
+                              </AnchorPane>
+                              <Rectangle fx:id="start_rect" arcHeight="5.0" arcWidth="5.0" fill="CHARTREUSE" height="21.0" layoutX="48.0" layoutY="179.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="21.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="GAINSBORO" height="21.0" layoutX="72.0" layoutY="74.0" stroke="BLACK" strokeType="INSIDE" width="21.0" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Настройки спутника">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Slider fx:id="amt_sat" layoutX="64.0" layoutY="34.0" majorTickUnit="1.0" max="4.0" min="1.0" minorTickCount="0" onMouseReleased="#amount_of_sat" prefHeight="0.0" prefWidth="190.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.0" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="68.0" AnchorPane.topAnchor="34.0" />
+                              <Label layoutX="99.0" layoutY="6.0" text="Количество спутников" AnchorPane.leftAnchor="99.0" AnchorPane.rightAnchor="99.0" AnchorPane.topAnchor="6.0" />
+                              <Separator layoutY="135.0" prefHeight="3.0" prefWidth="333.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="135.0" />
+                              <AnchorPane fx:id="sat2" layoutX="-2.0" layoutY="302.0" prefHeight="155.0" prefWidth="322.0" visible="false" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="302.0">
+                                 <children>
+                                    <TextField fx:id="l_sat2" layoutX="97.0" layoutY="70.0" prefHeight="25.0" prefWidth="60.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="165.0" AnchorPane.topAnchor="70.0" />
+                                    <TextField fx:id="f_sat2" layoutX="97.0" layoutY="33.0" prefHeight="25.0" prefWidth="60.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="165.0" AnchorPane.topAnchor="33.0" />
+                                    <Slider fx:id="h_sat2" layoutX="114.0" layoutY="104.0" majorTickUnit="250.0" max="2000.0" min="500.0" minorTickCount="1" prefHeight="38.0" prefWidth="151.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1000.0" AnchorPane.leftAnchor="114.0" AnchorPane.rightAnchor="57.0" AnchorPane.topAnchor="104.0" />
+                                    <Separator layoutX="-9.0" layoutY="145.0" prefHeight="3.0" prefWidth="340.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="145.0" />
+                                    <Label layoutX="40.0" layoutY="37.0" prefHeight="17.0" prefWidth="50.0" text="Широта:" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="37.0" />
+                                    <Label layoutX="45.0" layoutY="74.0" prefHeight="17.0" prefWidth="49.0" text="Долгота:" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="74.0" />
+                                    <Label layoutX="47.0" layoutY="104.0" prefHeight="17.0" prefWidth="42.0" text="Высота" AnchorPane.leftAnchor="42.0" AnchorPane.topAnchor="104.0" />
+                                    <Label layoutX="34.0" layoutY="123.0" prefHeight="17.0" prefWidth="71.0" text="орбиты, км:" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="123.0" />
+                                    <Label layoutX="127.0" layoutY="6.0" text="Спутник №2" AnchorPane.leftAnchor="127.0" AnchorPane.rightAnchor="126.0" AnchorPane.topAnchor="6.0" />
+                                    <Label fx:id="label_f2" layoutX="165.0" layoutY="37.0" prefHeight="17.0" prefWidth="147.0" textFill="RED" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="37.0" />
+                                    <Label fx:id="label_l2" layoutX="166.0" layoutY="74.0" prefHeight="17.0" prefWidth="147.0" textFill="RED" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="74.0" />
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="YELLOWGREEN" height="21.0" layoutX="104.0" layoutY="4.0" stroke="BLACK" strokeType="INSIDE" width="21.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="sat3" layoutY="457.0" prefHeight="156.0" prefWidth="322.0" visible="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="457.0">
+                                 <children>
+                                    <TextField fx:id="f_sat3" layoutX="97.0" layoutY="33.0" prefHeight="25.0" prefWidth="60.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="165.0" AnchorPane.topAnchor="33.0" />
+                                    <TextField fx:id="l_sat3" layoutX="97.0" layoutY="70.0" prefHeight="25.0" prefWidth="60.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="165.0" AnchorPane.topAnchor="70.0" />
+                                    <Slider fx:id="h_sat3" layoutX="114.0" layoutY="104.0" majorTickUnit="250.0" max="2000.0" min="500.0" minorTickCount="1" prefHeight="38.0" prefWidth="151.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1000.0" AnchorPane.leftAnchor="114.0" AnchorPane.rightAnchor="57.0" AnchorPane.topAnchor="104.0" />
+                                    <Separator layoutX="-9.0" layoutY="145.0" prefHeight="3.0" prefWidth="340.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="145.0" />
+                                    <Label layoutX="46.0" layoutY="37.0" prefHeight="17.0" prefWidth="50.0" text="Широта:" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="37.0" />
+                                    <Label layoutX="47.0" layoutY="74.0" text="Долгота:" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="74.0" />
+                                    <Label layoutX="47.0" layoutY="104.0" prefHeight="17.0" prefWidth="42.0" text="Высота" AnchorPane.leftAnchor="42.0" AnchorPane.topAnchor="104.0" />
+                                    <Label layoutX="35.0" layoutY="121.0" prefHeight="17.0" prefWidth="72.0" text="орбиты, км:" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="121.0" />
+                                    <Label layoutX="127.0" layoutY="6.0" text="Спутник №3" AnchorPane.leftAnchor="127.0" AnchorPane.rightAnchor="126.0" AnchorPane.topAnchor="6.0" />
+                                    <Label fx:id="label_f3" layoutX="165.0" layoutY="37.0" prefHeight="17.0" prefWidth="147.0" textFill="RED" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="37.0" />
+                                    <Label fx:id="label_l3" layoutX="166.0" layoutY="74.0" prefHeight="17.0" prefWidth="147.0" textFill="RED" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="74.0" />
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="ORANGE" height="21.0" layoutX="104.0" layoutY="4.0" stroke="BLACK" strokeType="INSIDE" width="21.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="sat4" layoutX="1.0" layoutY="613.0" prefHeight="156.0" prefWidth="322.0" visible="false" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="613.0">
+                                 <children>
+                                    <TextField fx:id="f_sat4" layoutX="97.0" layoutY="33.0" prefHeight="25.0" prefWidth="60.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="165.0" AnchorPane.topAnchor="33.0" />
+                                    <TextField fx:id="l_sat4" layoutX="97.0" layoutY="70.0" prefHeight="25.0" prefWidth="60.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="165.0" AnchorPane.topAnchor="70.0" />
+                                    <Slider fx:id="h_sat4" layoutX="114.0" layoutY="104.0" majorTickUnit="250.0" max="2000.0" min="500.0" minorTickCount="1" prefHeight="38.0" prefWidth="151.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1000.0" AnchorPane.leftAnchor="114.0" AnchorPane.rightAnchor="57.0" AnchorPane.topAnchor="104.0" />
+                                    <Label layoutX="47.0" layoutY="37.0" prefHeight="17.0" prefWidth="50.0" text="Широта:" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="37.0" />
+                                    <Label layoutX="48.0" layoutY="74.0" prefHeight="17.0" prefWidth="49.0" text="Долгота:" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="74.0" />
+                                    <Label layoutX="51.0" layoutY="104.0" prefHeight="17.0" prefWidth="42.0" text="Высота" AnchorPane.leftAnchor="42.0" AnchorPane.topAnchor="104.0" />
+                                    <Label layoutX="37.0" layoutY="123.0" prefHeight="17.0" prefWidth="71.0" text="орбиты, км:" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="123.0" />
+                                    <Label layoutX="127.0" layoutY="6.0" text="Спутник №4" AnchorPane.leftAnchor="127.0" AnchorPane.rightAnchor="126.0" AnchorPane.topAnchor="6.0" />
+                                    <Label fx:id="label_f4" layoutX="165.0" layoutY="37.0" prefHeight="17.0" prefWidth="147.0" textFill="RED" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="37.0" />
+                                    <Label fx:id="label_l4" layoutX="166.0" layoutY="74.0" prefHeight="17.0" prefWidth="147.0" textFill="RED" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="74.0" />
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="GOLD" height="21.0" layoutX="104.0" layoutY="4.0" stroke="BLACK" strokeType="INSIDE" width="21.0" />
+                                 </children>
+                              </AnchorPane>
+                              <Button fx:id="add_sat" layoutX="95.0" layoutY="70.0" mnemonicParsing="false" onAction="#add_sat" prefHeight="23.0" prefWidth="133.0" text="Добавить спутники" AnchorPane.leftAnchor="95.0" AnchorPane.rightAnchor="94.0" AnchorPane.topAnchor="70.0" />
+                              <Label fx:id="label_l1" layoutX="166.0" layoutY="215.0" prefHeight="17.0" prefWidth="147.0" textFill="RED" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="215.0" />
+                              <Label fx:id="label_f1" layoutX="166.0" layoutY="177.0" prefHeight="17.0" prefWidth="147.0" textFill="RED" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="177.0" />
+                              <Label layoutX="127.0" layoutY="145.0" prefHeight="17.0" prefWidth="73.0" text="Спутник №1" AnchorPane.leftAnchor="127.0" AnchorPane.rightAnchor="126.0" AnchorPane.topAnchor="145.0" />
+                              <Label layoutX="32.0" layoutY="269.0" prefHeight="17.0" prefWidth="72.0" text="орбиты, км:" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="269.0" />
+                              <Label layoutX="42.0" layoutY="250.0" prefHeight="17.0" prefWidth="42.0" text="Высота" AnchorPane.leftAnchor="42.0" AnchorPane.topAnchor="250.0" />
+                              <Label layoutX="40.0" layoutY="215.0" prefHeight="17.0" prefWidth="49.0" text="Долгота:" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="215.0" />
+                              <Label layoutX="40.0" layoutY="177.0" prefHeight="17.0" prefWidth="49.0" text="Широта:" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="177.0" />
+                              <Separator layoutY="293.0" prefHeight="2.0" prefWidth="332.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="293.0" />
+                              <Slider fx:id="h_sat1" layoutX="114.0" layoutY="250.0" majorTickUnit="250.0" max="2000.0" min="500.0" minorTickCount="1" prefHeight="38.0" prefWidth="151.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1000.0" AnchorPane.leftAnchor="114.0" AnchorPane.rightAnchor="57.0" AnchorPane.topAnchor="250.0" />
+                              <TextField fx:id="f_sat1" layoutX="97.0" layoutY="173.0" prefHeight="25.0" prefWidth="60.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="165.0" AnchorPane.topAnchor="173.0" />
+                              <TextField fx:id="l_sat1" layoutX="97.0" layoutY="211.0" prefHeight="25.0" prefWidth="60.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="165.0" AnchorPane.topAnchor="211.0" />
+                              <Button fx:id="reset_sat" layoutX="68.0" layoutY="104.0" mnemonicParsing="false" onAction="#reset_sat" text="Сбросить настройки спутников" AnchorPane.leftAnchor="68.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="104.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="21.0" layoutX="104.0" layoutY="143.0" stroke="BLACK" strokeType="INSIDE" width="21.0" AnchorPane.topAnchor="143.0" />
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Результаты моделирования">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="11.0" layoutY="166.0" text="Широта:" AnchorPane.leftAnchor="11.0" AnchorPane.topAnchor="166.0" />
+                              <Label fx:id="error1" layoutX="195.0" layoutY="614.0" prefHeight="17.0" prefWidth="115.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="614.0" />
+                              <Label layoutX="11.0" layoutY="202.0" text="Долгота:" AnchorPane.leftAnchor="11.0" AnchorPane.topAnchor="202.0" />
+                              <Label fx:id="result_f" layoutX="63.0" layoutY="166.0" prefHeight="17.0" prefWidth="245.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="166.0" />
+                              <Label fx:id="result_l" layoutX="63.0" layoutY="202.0" prefHeight="17.0" prefWidth="245.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="202.0" />
+                              <Label layoutX="12.0" layoutY="556.0" text="Ошибка позиционирования, м:" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="556.0" />
+                              <Label layoutX="21.0" layoutY="433.0" text="X:">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font></Label>
+                              <Label layoutX="21.0" layoutY="469.0" text="Y:">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font></Label>
+                              <Label layoutX="21.0" layoutY="509.0" text="Z:">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font></Label>
+                              <Label layoutX="47.0" layoutY="277.0" prefHeight="17.0" prefWidth="260.0" AnchorPane.rightAnchor="15.0" fx:id="xreal" />
+                              <Label fx:id="yreal" layoutX="47.0" layoutY="314.0" prefHeight="17.0" prefWidth="260.0" AnchorPane.rightAnchor="15.0" />
+                              <Label fx:id="zreal" layoutX="47.0" layoutY="356.0" prefHeight="17.0" prefWidth="260.0" AnchorPane.rightAnchor="15.0" />
+                              <Label layoutX="47.0" layoutY="434.0" prefHeight="17.0" prefWidth="260.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="434.0" fx:id="x" />
+                              <Label fx:id="y" layoutX="47.0" layoutY="470.0" prefHeight="17.0" prefWidth="260.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="470.0" />
+                              <Label fx:id="z" layoutX="47.0" layoutY="510.0" prefHeight="17.0" prefWidth="260.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="510.0" />
+                              <Label fx:id="lreal" layoutX="66.0" layoutY="96.0" prefHeight="17.0" prefWidth="245.0" AnchorPane.rightAnchor="15.0" />
+                              <Label fx:id="freal" layoutX="66.0" layoutY="59.0" prefHeight="17.0" prefWidth="245.0" AnchorPane.rightAnchor="15.0" />
+                              <Label layoutX="13.0" layoutY="96.0" text="Долгота:" />
+                              <Label layoutX="13.0" layoutY="59.0" text="Широта:" />
+                              <Separator layoutY="233.0" prefHeight="2.0" prefWidth="329.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="233.0" />
+                              <Separator layoutY="392.0" prefHeight="3.0" prefWidth="342.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="392.0" />
+                              <Separator layoutY="545.0" prefHeight="1.0" prefWidth="338.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="545.0" />
+                              <Label layoutX="32.0" layoutY="239.0" text="Реальные координаты (геоцентрические) судна" />
+                              <Label layoutX="20.0" layoutY="398.0" text="Рассчитанные координаты (геоцентрические) судна" />
+                              <Label layoutX="17.0" layoutY="355.0" text="Z:">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="17.0" layoutY="313.0" text="Y:">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="16.0" layoutY="276.0" text="X:">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Separator layoutY="124.0" prefHeight="7.0" prefWidth="336.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="124.0" />
+                              <Label layoutX="13.0" layoutY="614.0" text="Ошибка позиционирования, м:" />
+                              <Label layoutX="67.0" layoutY="130.0" text="Рассчитанные координаты судна" />
+                              <Label layoutX="85.0" layoutY="24.0" text="Реальные координаты судна" />
+                              <Label fx:id="error" layoutX="194.0" layoutY="556.0" prefHeight="17.0" prefWidth="115.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="556.0" />
+                              <Label layoutX="14.0" layoutY="638.0" prefHeight="17.0" prefWidth="275.0" text="при расчете через геоцентрические координаты" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Дополнительная информация">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="20.0" layoutY="33.0" text="Всего измерений:" />
+                              <Label layoutX="20.0" layoutY="85.0" text="Измерений спутника №1:" />
+                              <Label layoutX="20.0" layoutY="135.0" text="Измерений спутника №2:" />
+                              <Label layoutX="20.0" layoutY="189.0" text="Измерений спутника №3:" />
+                              <Label layoutX="20.0" layoutY="242.0" text="Измерений спутника №4:" />
+                              <Label fx:id="iter" layoutX="192.0" layoutY="33.0" prefHeight="17.0" prefWidth="90.0" />
+                              <Label fx:id="iter1" layoutX="192.0" layoutY="85.0" prefHeight="17.0" prefWidth="90.0" />
+                              <Label fx:id="iter2" layoutX="192.0" layoutY="135.0" prefHeight="17.0" prefWidth="90.0" />
+                              <Label fx:id="iter3" layoutX="192.0" layoutY="189.0" prefHeight="17.0" prefWidth="90.0" />
+                              <Label fx:id="iter4" layoutX="192.0" layoutY="242.0" prefHeight="17.0" prefWidth="90.0" />
+                              <Label fx:id="speed1" layoutX="117.0" layoutY="401.0" prefHeight="17.0" prefWidth="190.0" />
+                              <Label fx:id="fst" layoutX="176.0" layoutY="459.0" prefHeight="17.0" prefWidth="140.0" AnchorPane.rightAnchor="6.0" />
+                              <Label fx:id="lst" layoutX="176.0" layoutY="519.0" prefHeight="17.0" prefWidth="140.0" AnchorPane.rightAnchor="6.0" />
+                              <Label fx:id="fe" layoutX="176.0" layoutY="583.0" prefHeight="17.0" prefWidth="140.0" AnchorPane.rightAnchor="6.0" />
+                              <Label fx:id="le" layoutX="176.0" layoutY="651.0" prefHeight="17.0" prefWidth="140.0" AnchorPane.rightAnchor="6.0" />
+                              <AnchorPane fx:id="dop_inf" layoutX="6.0" layoutY="382.0" prefHeight="220.0" prefWidth="130.0" visible="false">
+                                 <children>
+                                    <Label layoutX="17.0" layoutY="17.0" text="Скорость судна:" />
+                                    <Label layoutX="19.0" layoutY="75.0" text="Широта начала движения:" />
+                                    <Label layoutX="19.0" layoutY="135.0" text="Долгота начала движения:" />
+                                    <Label layoutX="19.0" layoutY="199.0" text="Широта конца движения:" />
+                                    <Label layoutX="19.0" layoutY="267.0" text="Долгота конца движения:" />
+                                 </children>
+                              </AnchorPane>
+                              <Label layoutX="20.0" layoutY="298.0" text="Геометрический фактор PDOP:" />
+                              <Label fx:id="pdop" layoutX="196.0" layoutY="298.0" prefHeight="17.0" prefWidth="111.0" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children></AnchorPane>
+  </items>
+</SplitPane>
